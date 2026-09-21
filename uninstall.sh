@@ -20,8 +20,8 @@ is_star55_app() {
 is_star55_launcher() {
     [ -f "$1" ] || return 1
     [ -L "$1" ] && return 1
-    [ "$(/usr/bin/sed -n '1p' "$1" 2>/dev/null || true)" = "# Star55 public launcher" ] &&
-    [ "$(/usr/bin/sed -n '2p' "$1" 2>/dev/null || true)" = "# Installed by star55-public/install.sh" ]
+    [ "$(/usr/bin/sed -n '2p' "$1" 2>/dev/null || true)" = "# Star55 public launcher" ] &&
+    [ "$(/usr/bin/sed -n '3p' "$1" 2>/dev/null || true)" = "# Installed by star55-public/install.sh" ]
 }
 
 REMOVE_APP=0

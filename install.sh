@@ -85,8 +85,8 @@ fi
 /bin/mkdir -p "$LAUNCHER_DIR"
 LAUNCHER="$LAUNCHER_DIR/star55"
 if [ -e "$LAUNCHER" ] && {
-    [ "$(/usr/bin/sed -n '1p' "$LAUNCHER" 2>/dev/null || true)" != "# Star55 public launcher" ] ||
-    [ "$(/usr/bin/sed -n '2p' "$LAUNCHER" 2>/dev/null || true)" != "# Installed by star55-public/install.sh" ];
+    [ "$(/usr/bin/sed -n '2p' "$LAUNCHER" 2>/dev/null || true)" != "# Star55 public launcher" ] ||
+    [ "$(/usr/bin/sed -n '3p' "$LAUNCHER" 2>/dev/null || true)" != "# Installed by star55-public/install.sh" ];
 }; then
     echo "error: refusing to replace unrelated launcher at $LAUNCHER" >&2
     exit 1
