@@ -123,7 +123,7 @@ if [ ! -d "$APP_PATH" ]; then
     exit 1
 fi
 exec /usr/bin/env -u OMPCODE -u STAR55_BACKGROUND STAR55_FOREGROUND=1 \
-    /usr/bin/open "$APP_PATH" --args "$@"
+    STAR55_UI_TEST=1 /usr/bin/open "$APP_PATH" --args "$@"
 LAUNCHER
 /bin/chmod 755 "$LAUNCHER_TMP"
 /bin/mv "$LAUNCHER_TMP" "$LAUNCHER"
