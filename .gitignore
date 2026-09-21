@@ -1,0 +1,6 @@
+.DS_Store
+
+# Release binaries stay in GitHub Releases, never in Git history.
+Star55.app/
+*.tar.gz
+*.sha256
