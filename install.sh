@@ -82,7 +82,7 @@ elif path_contains "$HOME/bin"; then
 else
     LAUNCHER_DIR="$HOME/.local/bin"
 fi
-/usr/bin/mkdir -p "$LAUNCHER_DIR"
+/bin/mkdir -p "$LAUNCHER_DIR"
 LAUNCHER="$LAUNCHER_DIR/star55"
 if [ -e "$LAUNCHER" ] && {
     [ "$(/usr/bin/sed -n '1p' "$LAUNCHER" 2>/dev/null || true)" != "# Star55 public launcher" ] ||
@@ -93,7 +93,7 @@ if [ -e "$LAUNCHER" ] && {
 fi
 
 APP_DEST="$HOME/Applications/Star55.app"
-/usr/bin/mkdir -p "$HOME/Applications"
+/bin/mkdir -p "$HOME/Applications"
 if [ -e "$APP_DEST" ]; then
     EXISTING_ID="$(/usr/bin/plutil -extract CFBundleIdentifier raw -o - "$APP_DEST/Contents/Info.plist" 2>/dev/null || true)"
     if [ "$EXISTING_ID" != "dev.star55.engine" ]; then
